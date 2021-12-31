@@ -180,6 +180,11 @@
   padding: 1em 3em;
 }
 /*///////////////////////////////////////////// our offers */
+.landingpage-ouroffers {
+  background-color: #fafbfc;
+  margin: 2em auto;
+  padding: 1em;
+}
 .landingpage-ouroffers h3 {
   text-align: center;
   color: black;
@@ -193,32 +198,53 @@
   padding-bottom: 0.5em;
 }
 .landingpage-ouroffers-listing {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
 }
 .landingpage-ouroffers-card {
   display: grid;
   grid-template-columns: 250px;
   grid-template-rows: 250px 150px;
-  grid-template-areas: "img" "text";
-  padding-right: 1em;
-  padding-left: 1em;
+  grid-template-areas: "price" "text" "btn";
   text-align: center;
   justify-content: center;
-  border-radius: 1.5em;
-  background-color: #334756;
-
-  color: white;
-  height: 80%;
-
+  background-color: white;
+  color: #1e69b8;
+  border: 1px solid #1e69b8;
   width: 80%;
-  margin-bottom: 1em;
+  gap: 1em;
 }
 .landingpage-ouroffers-card .ouroffer-card-price {
-  grid-area: img;
+  grid-area: price;
+  font-size: 3rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .landingpage-ouroffers-card .ouroffer-card-text {
   grid-area: text;
+}
+.landingpage-ouroffers-card .ouroffer-card-btn {
+  grid-area: btn;
+  padding-bottom: 1em;
+}
+.landingpage-ouroffers-card .ouroffer-card-btn button {
+  padding: 1em 3em;
+  background: none;
+  border: #1e69b8 1px solid;
+  border-radius: 20px;
+  color: #1e69b8;
+  cursor: pointer;
+}
+.landingpage-ouroffers-card .ouroffer-card-btn button:hover {
+  transition: 0.3s;
+  background-color: #1e69b8;
+  color: white;
+  border: #1e69b8 1px solid;
 }
 /*/////////////////////////////////////////// testimonials styling */
 .testimonials {

@@ -27,7 +27,7 @@ function Navbar({ submitted, setSubmitted, logged, setLogged }) {
           </li>
           <li>
             {" "}
-            <Link to="/listingcars">LISTING CARS</Link>
+            <Link to="/listingcars">SERVICES</Link>
           </li>
           <li>
             {" "}

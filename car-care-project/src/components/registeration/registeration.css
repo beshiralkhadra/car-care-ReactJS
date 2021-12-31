@@ -2,11 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dadada;
+  background-color: white;
 }
 
 .registration-form-container {
-  background-color: white;
+  -webkit-box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
+  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
   margin: 3em 0.5em;
   padding: 3em;
   border-radius: 20px;
@@ -50,14 +51,14 @@ label {
   padding: auto 1em;
 }
 .login {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dadada;
+  height: 100vh;
 }
 .login-form {
-  background-color: white;
+  -webkit-box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
+  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
   padding: 3em;
   border-radius: 20px;
   display: flex;

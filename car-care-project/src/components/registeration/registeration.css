@@ -58,7 +58,7 @@ label {
 }
 .login-form {
   -webkit-box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
-  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
+  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27); 
   padding: 3em;
   border-radius: 20px;
   display: flex;

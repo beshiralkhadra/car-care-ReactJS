@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import Signup from "./components/registeration/Signup";
 import Login from "./components/registeration/Login";
 import Aboutus from "./components/aboutUs/Aboutus";
+import Services from "./components/services/Services";
 function App() {
   const [userSignupInformation, setUserSignupInformation] = useState({
     username: "",
@@ -41,6 +42,9 @@ function App() {
             </Route>
             <Route path="/aboutus">
               <Aboutus />
+            </Route>
+            <Route path="/services">
+              <Services />
             </Route>
           </Switch>
         </div>

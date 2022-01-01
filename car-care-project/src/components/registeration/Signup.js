@@ -42,7 +42,7 @@ function Signup({ userSignupInformation, setUserSignupInformation, history }) {
       localStorage.setItem("user", JSON.stringify(updatedData));
 
       history.push({
-        pathname: `/expense`,
+        pathname: `/login`,
       });
       sessionStorage.setItem(
         "loggedAccount",

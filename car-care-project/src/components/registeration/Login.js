@@ -38,7 +38,7 @@ function Login({ userLoginInformation, setUserLoginInformation, history }) {
     if (check) {
       dispatch({ type: "SET_LOGGED" });
       history.push({
-        pathname: `/expense`,
+        pathname: `/`,
       });
 
       sessionStorage.setItem(

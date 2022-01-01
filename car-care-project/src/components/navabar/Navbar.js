@@ -31,7 +31,7 @@ function Navbar({ submitted, setSubmitted, logged, setLogged }) {
           </li>
           <li>
             {" "}
-            <Link to="/contactus">CONTACT US</Link>
+            <Link to="/profile">PROFILE</Link>
           </li>
         </ul>
       </div>

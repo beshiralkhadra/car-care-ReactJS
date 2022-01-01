@@ -8,6 +8,8 @@ import Signup from "./components/registeration/Signup";
 import Login from "./components/registeration/Login";
 import Aboutus from "./components/aboutUs/Aboutus";
 import Services from "./components/services/Services";
+import Userprofile from "./components/userprofile/Userprofile";
+import Booking from "./components/Bookingform.js/Booking";
 function App() {
   const [userSignupInformation, setUserSignupInformation] = useState({
     username: "",
@@ -45,6 +47,12 @@ function App() {
             </Route>
             <Route path="/services">
               <Services />
+            </Route>
+            <Route path="/booking">
+              <Booking />
+            </Route>
+            <Route path="/profile">
+              <Userprofile />
             </Route>
           </Switch>
         </div>

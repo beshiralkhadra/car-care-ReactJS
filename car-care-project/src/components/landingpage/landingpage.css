@@ -339,10 +339,14 @@
   .card {
     width: 20em !important;
   }
-  .landingpage-about {
-    display: flex;
+  .landingpage-ouroffers-listing {
     flex-direction: column;
   }
+  .landingpage-ouroffers-card {
+    width: 70%;
+    margin: 1em auto;
+  }
+
   .landingpage-Testimonials-cards {
     display: flex;
     flex-direction: column;

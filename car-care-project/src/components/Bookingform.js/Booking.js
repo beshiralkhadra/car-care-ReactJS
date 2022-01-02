@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./booking.css";
+import { useParams } from "react-router-dom";
+import Popup from "./Popup";
 const Booking = () => {
+  // let { id } = useParams();
+  let getLocal = JSON.parse(localStorage.getItem("loggedUsers"));
+  const [inputData, setInputData] = useState(getLocal);
+  const [test, setTest] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+  /////////////////////////////////////////////////  handling dates
+  let d = new Date();
+  let tdate = d.getDate();
+  let month = d.getMonth() + 1;
+  let year = d.getUTCFullYear();
+  if (tdate < 10) {
+    tdate = "0" + tdate;
+  }
+  if (month < 10) {
+    month = "0" + month;
+  }
+  let minDate = year + "-" + month + "-" + tdate;
+
+  const handleonchange = (e) => {
+    const { name, value } = e.target;
+    setInputData({ ...inputData, [name]: value });
+  };
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    let data = {
+      ...inputData,
+    };
+    setSubmitted(!submitted);
+    setTest(data);
   };
   return (
     <div className="car-form-container ">
@@ -10,27 +39,18 @@ const Booking = () => {
         <div className="textsCont">
           <div className="texts" id="texts1">
             <input
-              //   onChange={(e) => handleInputChange(e)}
-              //   value={userInfo.fName}
+              onChange={handleonchange}
+              name="username"
+              value={inputData[0].username}
               required
               placeholder="First Name"
               type="text"
-              name="fName"
-              id="fName"
-            />
-            <input
-              //   onChange={(e) => handleInputChange(e)}
-              //   value={userInfo.lName}
-              required
-              placeholder="Last Name"
-              type="text"
-              name="lName"
-              id="lName"
+              id="username"
             />
           </div>
           <div className="texts" id="texts2">
             <input
-              //   value={userInfo.email}
+              value={getLocal[0].email}
               required
               placeholder="Email"
               onChange={() => {
@@ -56,14 +76,7 @@ const Booking = () => {
             // value={valueCut}
             type="date"
             name="start"
-            // min={found ? starting : valueCut1}
-          />
-          <input
-            // onChange={(e) => handleDateChange2(e)}
-            // min={valueCut2}
-            // value={valueCut2}
-            type="date"
-            name="end"
+            min={minDate}
           />
           <input required type="time" name="hours" />
         </div>
@@ -75,6 +88,7 @@ const Booking = () => {
           <input type="submit" value="Book Now !" />
         </div>
       </form>
+      {submitted && <Popup test={test} setSubmitted={setSubmitted} />}
     </div>
   );
 };

@@ -15,7 +15,10 @@ const reducer = (state, action) => {
     return { ...state, submitted: true };
   }
   if (action.type === "SET_LOGGED") {
-    return { ...state, submitted: true };
+    return { ...state, logged: true };
+  }
+  if (action.type === "SET_LOGOUT") {
+    return { ...state, logged: false };
   }
 };
 

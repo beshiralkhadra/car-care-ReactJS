@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
-
-function Navbar({ submitted, setSubmitted, logged, setLogged }) {
+import { useGlobalContext } from "../context/context";
+function Navbar() {
   const [showNav, setShowNav] = useState(false);
+  const { state, dispatch } = useGlobalContext();
 
   return (
     <nav className="navbar">
@@ -29,32 +30,30 @@ function Navbar({ submitted, setSubmitted, logged, setLogged }) {
             {" "}
             <Link to="/services">SERVICES</Link>
           </li>
-          <li>
-            {" "}
-            <Link to="/profile">PROFILE</Link>
-          </li>
+          <li>{state.logged && <Link to="/profile">PROFILE</Link>}</li>
         </ul>
       </div>
 
       <div className="register-btn">
         <ul id={showNav ? "hiddenbtn" : null}>
           <li>
-            {!logged && (
+            {!state.logged && (
               <Link to="/login">
                 <button className="login-btn-header">Login</button>
               </Link>
             )}
           </li>
           <li>
-            {logged ? (
+            {state.logged ? (
               <Link to="/login">
                 <button
                   className="logout-btn-header"
                   onClick={() => {
-                    localStorage.removeItem("logged_user");
-                    setLogged(localStorage.getItem("logged_user"));
-                    setSubmitted(localStorage.getItem("logged_user"));
-                    sessionStorage.removeItem("from");
+                    localStorage.removeItem("loggedUsers");
+                    dispatch({ type: "SET_LOGOUT" });
+                    // setLogged(localStorage.getItem("logged_user"));
+                    // setSubmitted(localStorage.getItem("logged_user"));
+                    // sessionStorage.removeItem("from");
                   }}
                 >
                   Logout
@@ -63,7 +62,7 @@ function Navbar({ submitted, setSubmitted, logged, setLogged }) {
             ) : null}
           </li>
           <li>
-            {!logged && (
+            {!state.logged && (
               <Link to="/signup">
                 {" "}
                 <button className="signup-btn-header">Signup</button>

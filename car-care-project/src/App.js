@@ -10,6 +10,7 @@ import Aboutus from "./components/aboutUs/Aboutus";
 import Services from "./components/services/Services";
 import Userprofile from "./components/userprofile/Userprofile";
 import Booking from "./components/Bookingform.js/Booking";
+import data99 from "./components/services/Data99";
 function App() {
   const [userSignupInformation, setUserSignupInformation] = useState({
     username: "",
@@ -46,10 +47,10 @@ function App() {
               <Aboutus />
             </Route>
             <Route path="/services">
-              <Services />
+              <Services data99={data99} />
             </Route>
-            <Route path="/booking">
-              <Booking />
+            <Route path="/booking/:id">
+              <Booking data99={data99} />
             </Route>
             <Route path="/profile">
               <Userprofile />

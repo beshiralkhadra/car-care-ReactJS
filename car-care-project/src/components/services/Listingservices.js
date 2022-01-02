@@ -1,6 +1,8 @@
 import React from "react";
-
-const Listingservices = ({ src, title, des, price }) => {
+import { withRouter } from "react-router";
+import { useGlobalContext } from "../context/context";
+const Listingservices = ({ src, title, des, price, history, id }) => {
+  const { state, dispatch } = useGlobalContext();
   return (
     <div className="listingservices-container">
       <div className="listingservices-img">
@@ -10,10 +12,20 @@ const Listingservices = ({ src, title, des, price }) => {
         <div className="listingservices-details-title">{title}</div>
         <div className="listingservices-details-description">{des}</div>
         <div className="listingservices-details-price">{price}</div>
-        <button>Book Now</button>
+        <button
+          onClick={() => {
+            {
+              state.logged
+                ? history.push({ pathname: `/booking/${id}` })
+                : history.push({ pathname: `/login` });
+            }
+          }}
+        >
+          Book Now
+        </button>
       </div>
     </div>
   );
 };
 
-export default Listingservices;
+export default withRouter(Listingservices);

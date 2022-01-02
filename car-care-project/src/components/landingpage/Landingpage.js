@@ -33,7 +33,7 @@ const Landingpage = () => {
                 </div>
                 <p>Make Your Life Easy</p>
                 <div>
-                  <Link to="/listingcars">
+                  <Link to="/services">
                     <button>Book Now</button>
                   </Link>
                 </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./landingpage.css";
 const Ouroffers = ({ title, price, des }) => {
   return (
@@ -9,7 +10,9 @@ const Ouroffers = ({ title, price, des }) => {
       </div>
       <div className="ouroffer-card-text">{des}</div>
       <div className="ouroffer-card-btn">
-        <button>Explore Now</button>
+        <Link to="/services">
+          <button>Explore Now</button>
+        </Link>
       </div>
     </div>
   );

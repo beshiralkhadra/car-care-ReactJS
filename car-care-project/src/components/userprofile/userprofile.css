@@ -4,7 +4,7 @@
 /*///////////////////////////////////////////// user data styling */
 .user-data {
   height: 100vh;
-  width: 15.6em;
+  width: 17em;
   background-color: #1e69b8;
   display: flex;
   flex-direction: column;

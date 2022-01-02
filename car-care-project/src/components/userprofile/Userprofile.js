@@ -1,14 +1,14 @@
 import React from "react";
 import "./userprofile.css";
 const Userprofile = () => {
-  let getLocal = JSON.parse(localStorage.getItem("user"));
-  console.log(getLocal);
+  let getLocal = JSON.parse(localStorage.getItem("loggedUsers"));
+
   return (
     <div className="userprofile">
       <div className="user-data">
         <img src="./abdallah3.jpg" />
         <div className="user-data-name">
-          <p>abdallah</p>
+          <p>{getLocal[0].username}</p>
         </div>
         <div className="user-data-email">
           <p>{getLocal[0].email} </p>

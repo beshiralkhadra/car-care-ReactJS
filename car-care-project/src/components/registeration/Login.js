@@ -17,7 +17,7 @@ function Login({ userLoginInformation, setUserLoginInformation, history }) {
   };
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-
+    let loggedUsers = [];
     let loginUpdatedData = [];
     loginUpdatedData = JSON.parse(localStorage.getItem("user"))
       ? JSON.parse(localStorage.getItem("user"))
@@ -28,7 +28,7 @@ function Login({ userLoginInformation, setUserLoginInformation, history }) {
         acc.email === userLoginInformation.loginEmail &&
         acc.password === userLoginInformation.loginPassword
     );
-
+    console.log(checkUser);
     const check = checkUser.some(
       (acc) =>
         acc.email === userLoginInformation.loginEmail &&
@@ -36,7 +36,9 @@ function Login({ userLoginInformation, setUserLoginInformation, history }) {
     );
 
     if (check) {
+      localStorage.setItem("loggedUsers", JSON.stringify(checkUser));
       dispatch({ type: "SET_LOGGED" });
+
       history.push({
         pathname: `/`,
       });

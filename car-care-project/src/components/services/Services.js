@@ -2,7 +2,7 @@ import React from "react";
 import "./services.css";
 import data99 from "./Data99";
 import Listingservices from "./Listingservices";
-const Services = () => {
+const Services = (props) => {
   return (
     <div>
       <div
@@ -22,6 +22,7 @@ const Services = () => {
             title={item.title}
             des={item.des}
             price={item.price}
+            id={item.id}
           />
         ))}
       </div>

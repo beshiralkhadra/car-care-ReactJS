@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./booking.css";
 import { useParams } from "react-router-dom";
+import data99 from "../services/Data99";
+
 import Popup from "./Popup";
 const Booking = () => {
-  // let { id } = useParams();
+  let { id, title } = useParams();
   let getLocal = JSON.parse(localStorage.getItem("loggedUsers"));
   const [inputData, setInputData] = useState(getLocal);
   const [test, setTest] = useState(null);
   const [submitted, setSubmitted] = useState(false);
+  const [voucher, setVoucher] = useState(false);
+  const [newPrice, setNewPrice] = useState(0);
+  if (!localStorage.getItem("reservations"))
+    localStorage.setItem("reservations", JSON.stringify([]));
   /////////////////////////////////////////////////  handling dates
   let d = new Date();
   let tdate = d.getDate();
@@ -25,16 +31,38 @@ const Booking = () => {
     const { name, value } = e.target;
     setInputData({ ...inputData, [name]: value });
   };
+  //////////////////////////////////////////price
+  let price;
+  for (let obj of data99) {
+    if (obj.id == id) {
+      price = obj.price;
+    }
+  }
+  /////////////////////voucher
+  const handlingVoucher = () => {
+    if (voucher == false) {
+      price = price - price * 0.1;
+      setNewPrice(price);
+      setVoucher(true);
+    }
+  };
+
+  ///////////////////////////////////////////handling data on submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
     let data = {
+      id: id,
+      title: title,
       ...inputData,
+      tel: e.target.tel.value,
+      date: e.target.start.value,
+      time: e.target.hours.value,
     };
     setSubmitted(!submitted);
     setTest(data);
   };
   return (
-    <div className="car-form-container ">
+    <div className="car-care-form-container ">
       <form className="form" onSubmit={handleFormSubmit}>
         <div className="textsCont">
           <div className="texts" id="texts1">
@@ -80,14 +108,17 @@ const Booking = () => {
           />
           <input required type="time" name="hours" />
         </div>
-        <div className="total">
-          {/* <p className="state">{duration} Days</p> */}
-          {/* <p>Total :{duration * ppd} JOD</p> */}
-        </div>
         <div className="submit">
           <input type="submit" value="Book Now !" />
         </div>
       </form>
+      <div className="total">
+        {/* <p className="state">{duration} Days</p> */}
+        <p>Total :{voucher == false ? price : newPrice} JOD</p>
+        <button className="voucher-btn" onClick={handlingVoucher}>
+          Apply Voucher
+        </button>
+      </div>
       {submitted && <Popup test={test} setSubmitted={setSubmitted} />}
     </div>
   );

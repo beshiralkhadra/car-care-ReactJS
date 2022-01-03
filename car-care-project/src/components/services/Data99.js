@@ -4,21 +4,21 @@ const data99 = [
     src: "./wash1.jpg",
     title: "CAR WASH",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    price: "15$/day",
+    price: 15,
   },
   {
     id: 101,
     src: "./oil.jpg",
     title: "OIL CHANGE",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    price: "25$/day",
+    price: 25,
   },
   {
     id: 102,
     src: "./check.jpg",
     title: "CAR CHECK",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    price: "40$/day",
+    price: 40,
   },
 ];
 export default data99;

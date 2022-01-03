@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 const Listingservices = ({ src, title, des, price, history, id }) => {
   const { state, dispatch } = useGlobalContext();
@@ -11,12 +11,12 @@ const Listingservices = ({ src, title, des, price, history, id }) => {
       <div className="listingservices-details">
         <div className="listingservices-details-title">{title}</div>
         <div className="listingservices-details-description">{des}</div>
-        <div className="listingservices-details-price">{price}</div>
+        <div className="listingservices-details-price">{price}JOD</div>
         <button
           onClick={() => {
             {
               state.logged
-                ? history.push({ pathname: `/booking/${id}` })
+                ? history.push({ pathname: `/booking/${id}/ ${title}` })
                 : history.push({ pathname: `/login` });
             }
           }}

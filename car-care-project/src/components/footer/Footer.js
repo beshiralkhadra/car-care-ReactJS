@@ -23,7 +23,7 @@ function Footer() {
             +962777685048
           </p>
           <p>
-            <i className="fas fa-envelope" /> carrent@gmail.com
+            <i className="fas fa-envelope" /> carcare@gmail.com
           </p>
           <p>
             <i className="fas fa-map-marker-alt" />
@@ -53,7 +53,7 @@ function Footer() {
           </ul>
         </div>
         <div className="copyright-footer">
-          <p>&copy; 2022 Car-Rent . All Rights Reserved</p>
+          <p>&copy; 2022 Car-care . All Rights Reserved</p>
         </div>
       </div>
     </div>

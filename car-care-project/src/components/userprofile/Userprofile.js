@@ -2,7 +2,8 @@ import React from "react";
 import "./userprofile.css";
 const Userprofile = () => {
   let getLocal = JSON.parse(localStorage.getItem("loggedUsers"));
-
+  let getOrder = JSON.parse(localStorage.getItem("reservations"));
+  console.log(getOrder[0].title);
   return (
     <div className="userprofile">
       <div className="user-data">
@@ -22,19 +23,21 @@ const Userprofile = () => {
           <table>
             <thead>
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Job Title</th>
-                <th>Twitter</th>
+                <th>ID</th>
+                <th>USERNAME</th>
+                <th>SERVICE</th>
+                <th>DATE</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td data-column="First Name">James</td>
-                <td data-column="Last Name">Matman</td>
-                <td data-column="Job Title">Chief Sandwich Eater</td>
-                <td data-column="Twitter">@james</td>
-              </tr>
+              {getOrder.map((item, id) => (
+                <tr>
+                  <td data-column="ID">{item.id}</td>
+                  <td data-column="USERNAME">{getLocal[0].username}</td>
+                  <td data-column="SERVICE">{item.title}</td>
+                  <td data-column="TOTAL">{item.date}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

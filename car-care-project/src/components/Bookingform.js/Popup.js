@@ -1,16 +1,14 @@
 import React from "react";
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 import "./popup.css";
-const Popup = (props) => {
+const Popup = ({ history, setSubmitted, test }) => {
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(props.test);
-    // let lclArr = JSON.parse(localStorage.getItem("reservations"));
-    // lclArr.push(props.test);
-    // localStorage.setItem("reservations", JSON.stringify(lclArr));
-    // props.history.push({
-    //   pathname: `/`,
-    // });
+    let newRes = JSON.parse(localStorage.getItem("reservations"));
+    newRes.push(test);
+    localStorage.setItem("reservations", JSON.stringify(newRes));
+    history.push({
+      pathname: `/`,
+    });
   };
 
   return (
@@ -28,7 +26,7 @@ const Popup = (props) => {
         <div className="box-btns">
           <button
             className="finalBtn-cancel"
-            // onClick={() => props.setSubmitted(false)}
+            onClick={() => setSubmitted(false)}
           >
             Cancel
           </button>

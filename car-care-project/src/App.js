@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/navabar/Navbar";
 import Landingpage from "./components/landingpage/Landingpage";
@@ -11,6 +11,7 @@ import Services from "./components/services/Services";
 import Userprofile from "./components/userprofile/Userprofile";
 import Booking from "./components/Bookingform.js/Booking";
 import data99 from "./components/services/Data99";
+import ScrollToTop from "./components/scrolltotop/ScrollToTop";
 function App() {
   const [userSignupInformation, setUserSignupInformation] = useState({
     username: "",
@@ -22,9 +23,37 @@ function App() {
     loginEmail: "",
     loginPassword: "",
   });
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 200) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+  const arrowUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
   return (
     <div className="App">
       <Router>
+        {isVisible ? (
+          <div className="jump">
+            <button onClick={arrowUp}>
+              <i className="fa-solid fa-arrow-up" />
+            </button>
+          </div>
+        ) : null}
+        <ScrollToTop />
         <Navbar />
         <div className="routes-div">
           <Switch>
@@ -49,7 +78,7 @@ function App() {
             <Route path="/services">
               <Services data99={data99} />
             </Route>
-            <Route path="/booking/:id">
+            <Route path="/booking/:id/:title">
               <Booking data99={data99} />
             </Route>
             <Route path="/profile">

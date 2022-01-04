@@ -28,7 +28,7 @@ function Login({ userLoginInformation, setUserLoginInformation, history }) {
         acc.email === userLoginInformation.loginEmail &&
         acc.password === userLoginInformation.loginPassword
     );
-    console.log(checkUser);
+
     const check = checkUser.some(
       (acc) =>
         acc.email === userLoginInformation.loginEmail &&

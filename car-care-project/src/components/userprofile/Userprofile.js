@@ -3,7 +3,7 @@ import "./userprofile.css";
 const Userprofile = () => {
   let getLocal = JSON.parse(localStorage.getItem("loggedUsers"));
   let getOrder = JSON.parse(localStorage.getItem("reservations"));
-  console.log(getOrder[0].title);
+
   return (
     <div className="userprofile">
       <div className="user-data">
@@ -31,7 +31,7 @@ const Userprofile = () => {
             </thead>
             <tbody>
               {getOrder.map((item, id) => (
-                <tr>
+                <tr key={id}>
                   <td data-column="ID">{item.id}</td>
                   <td data-column="USERNAME">{getLocal[0].username}</td>
                   <td data-column="SERVICE">{item.title}</td>

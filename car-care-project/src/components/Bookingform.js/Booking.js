@@ -99,13 +99,7 @@ const Booking = () => {
           </div>
         </div>
         <div className="dates">
-          <input
-            // onChange={(e) => handleDateChange(e)}
-            // value={valueCut}
-            type="date"
-            name="start"
-            min={minDate}
-          />
+          <input type="date" name="start" min={minDate} />
           <input required type="time" name="hours" />
         </div>
         <div className="submit">
@@ -113,7 +107,6 @@ const Booking = () => {
         </div>
       </form>
       <div className="total">
-        {/* <p className="state">{duration} Days</p> */}
         <p>Total :{voucher == false ? price : newPrice} JOD</p>
         <button className="voucher-btn" onClick={handlingVoucher}>
           Apply Voucher

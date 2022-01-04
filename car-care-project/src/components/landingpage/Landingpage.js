@@ -31,7 +31,7 @@ const Landingpage = () => {
                 <div className="landingpage-icon">
                   <i className="fas fa-car" />
                 </div>
-                <p>Make Your Life Easy</p>
+                <p>WE TAKE CARE OF YOUR CAR</p>
                 <div>
                   <Link to="/services">
                     <button>Book Now</button>
@@ -75,7 +75,7 @@ const Landingpage = () => {
                 </div>
                 <p>Make Your Life Easy</p>
                 <div>
-                  <Link to="/listingcars">
+                  <Link to="/services">
                     <button>Book Now</button>
                   </Link>
                 </div>
@@ -123,7 +123,9 @@ const Landingpage = () => {
           ))}
         </div>
         <div className="landingpage-services-btn">
-          <button>READ MORE</button>
+          <Link to="/services">
+            <button>READ MORE</button>
+          </Link>
         </div>
       </div>
       {/*//////////////////////////////////////////////////////////////// our offers  */}
@@ -140,22 +142,7 @@ const Landingpage = () => {
           ))}
         </div>
       </div>
-      {/* <div className="landingpage-about">
-        <div className="landingpage-about-img">
-          <img src="./car3.jpg" alt="car" />
-        </div>
-        <div className="landingpage-about-text">
-          <h3>About Premium Rent A Car</h3>
-          <p>
-            The Mercedes-Benz Cars range covers every passenger car segment:
-            from the urban microcar by smart, to the exclusive product range by
-            Mercedes-Benz and Mercedes-Maybach, to the performance and sports
-            cars by Mercedes-AMG. With Mercedes-EQ, Mercedes-Benz Cars is
-            driving forward the systematic development of alternative drives:
-            the aim is to electrify the entire portfolio by 2022.
-          </p>
-        </div>
-      </div> */}
+
       {/*///////////////////////////////////////////////////////////// our testimonials  */}
       <div className="landingpage-Testimonials">
         <h3>OUR TESTIMONIALS</h3>

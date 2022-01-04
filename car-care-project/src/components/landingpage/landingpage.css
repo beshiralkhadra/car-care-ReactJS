@@ -9,6 +9,30 @@
   z-index: 10;
   padding-top: 25vh;
   width: 100%;
+  transition: transform 1.5s linear;
+  animation: up-to-bottom 1.5s linear forwards;
+}
+.ladingpage-slider-container-btn button {
+  transition: transform 1.6s linear;
+  animation: up-to-bottom 1.6s linear forwards;
+}
+.ladingpage-slider-container-btn p {
+  transition: transform 1.4s linear;
+  animation: up-to-bottom 1.4s linear forwards;
+}
+.ladingpage-slider-container-btn .fa-car {
+  transition: transform 0.4s linear;
+  animation: up-to-bottom 0.4s linear forwards;
+}
+
+@keyframes up-to-bottom {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
 .landingpage-icon {
   background-color: #1e69b8;
@@ -205,8 +229,8 @@
 }
 .landingpage-ouroffers-card {
   display: grid;
-  grid-template-columns: 250px;
-  grid-template-rows: 250px 150px;
+  grid-template-columns: 200px;
+  grid-template-rows: 200px 150px;
   grid-template-areas: "price" "text" "btn";
   text-align: center;
   justify-content: center;
@@ -214,11 +238,10 @@
   color: #1e69b8;
   border: 1px solid #1e69b8;
   width: 80%;
-  gap: 1em;
 }
 .landingpage-ouroffers-card .ouroffer-card-price {
   grid-area: price;
-  font-size: 3rem;
+  font-size: 2.3rem;
   font-weight: 300;
   display: flex;
   flex-direction: column;
@@ -329,6 +352,15 @@
     display: flex;
     flex-direction: column;
   }
+  .landingpage-ouroffers-card {
+    grid-template-columns: 150px;
+  }
+  .landingpage-ouroffers-card .ouroffer-card-price {
+    font-size: 2rem;
+  }
+  .landingpage-ouroffers-card .ouroffer-card-btn button {
+    padding: 1em;
+  }
 }
 @media screen and (max-width: 540px) {
   .landingpage-explore-cars {
@@ -355,7 +387,7 @@
     padding: 0;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 426px) {
   .landingpage-explore-cars {
     display: flex;
     flex-direction: column;
@@ -382,11 +414,30 @@
   .ladingpage-slider-container-btn button {
     padding: 0.7rem 4rem;
   }
+  .aboutus-about-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutus-about-section .aboutus-img img {
+    width: 20em;
+  }
+  .aboutus-about-section .aboutus-text {
+    width: 80%;
+  }
+  .aboutus-about-section .aboutus-text h1 {
+    font-size: 2rem;
+  }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 376px) {
   .cars-cards .card {
     width: 18em !important  ;
     margin: auto;
+  }
+  .landingpage-explore-services {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
   }
 }
 @media screen and (max-width: 280px) {

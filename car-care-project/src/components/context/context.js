@@ -4,12 +4,6 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  budget: 3000,
-  expenses: [
-    { id: 12, name: "shopping", cost: 200 },
-    { id: 14, name: "holiday", cost: 60 },
-    { id: 15, name: "maintainance", cost: 90 },
-  ],
   submitted: false,
   logged: false,
 };

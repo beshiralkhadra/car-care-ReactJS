@@ -6,6 +6,12 @@ const data3 = [
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
   {
+    id: 86,
+    title: "change tires",
+    price: 100,
+    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+  {
     id: 98,
     title: "oil change",
     price: 25,

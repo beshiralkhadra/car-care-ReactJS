@@ -7,6 +7,13 @@ const data99 = [
     price: 15,
   },
   {
+    id: 103,
+    src: "./tire.jpg",
+    title: "CHANGE TIRES",
+    des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    price: 100,
+  },
+  {
     id: 101,
     src: "./oil.jpg",
     title: "OIL CHANGE",

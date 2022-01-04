@@ -26,7 +26,7 @@
   padding: 1rem 2em;
   color: white;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .form-btn:hover {
@@ -58,7 +58,7 @@ label {
 }
 .login-form {
   -webkit-box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
-  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27); 
+  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.27);
   padding: 3em;
   border-radius: 20px;
   display: flex;
@@ -74,7 +74,7 @@ label {
   padding: 1rem 2em;
   color: white;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .login-btn-form:hover {
   transform: scale(1.1);
@@ -84,5 +84,42 @@ label {
 @media screen and (max-width: 1024px) {
   .registration {
     height: 100vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .registration-form-container {
+    width: 60%;
+    height: 80vh;
+  }
+  .registretion-input {
+    padding: 0.5em;
+  }
+  .form-btn {
+    margin: 0em auto;
+    padding: 0.5em 1em;
+  }
+}
+@media screen and (max-width: 426px) {
+  .registration-form-container {
+    width: 80%;
+    height: 90vh;
+    padding: 1.5em;
+  }
+}
+@media screen and (max-width: 412px) {
+  .registration-form-container {
+    width: 90%;
+    height: 70vh;
+  }
+  .login-form {
+    width: 80%;
+  }
+  .registretion-input {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .registration-form-container {
+    height: 90vh;
   }
 }

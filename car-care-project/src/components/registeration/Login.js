@@ -17,7 +17,7 @@ function Login({ userLoginInformation, setUserLoginInformation, history }) {
   };
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    let loggedUsers = [];
+
     let loginUpdatedData = [];
     loginUpdatedData = JSON.parse(localStorage.getItem("user"))
       ? JSON.parse(localStorage.getItem("user"))

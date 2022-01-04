@@ -96,7 +96,7 @@
 .copyright-footer {
   margin: auto 0;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 426px) {
   .footer {
     display: flex;
     flex-direction: column;
@@ -107,6 +107,12 @@
   .footer-about {
     width: 90%;
     text-align: center;
+  }
+  .contactus-footer h3 {
+    padding: 0;
+  }
+  .footer-top-right h3 {
+    padding: 0;
   }
   .contactus-footer {
     text-align: center;

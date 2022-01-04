@@ -51,9 +51,6 @@ function Navbar() {
                   onClick={() => {
                     localStorage.removeItem("loggedUsers");
                     dispatch({ type: "SET_LOGOUT" });
-                    // setLogged(localStorage.getItem("logged_user"));
-                    // setSubmitted(localStorage.getItem("logged_user"));
-                    // sessionStorage.removeItem("from");
                   }}
                 >
                   Logout

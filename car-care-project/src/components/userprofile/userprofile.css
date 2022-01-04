@@ -108,7 +108,7 @@ th {
     font-weight: bold;
   }
 }
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 769px) {
   .userprofile {
     display: flex;
     flex-direction: column;

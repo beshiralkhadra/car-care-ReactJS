@@ -52,3 +52,29 @@
   border: #1e69b8 1px solid;
   color: white;
 }
+@media screen and (max-width: 768px) {
+  .listingservices-container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .listingservices-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .listingservices-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 426px) {
+  .listingservices-details-description {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 321px) {
+  .listingservices-img img {
+    width: 15em;
+  }
+}

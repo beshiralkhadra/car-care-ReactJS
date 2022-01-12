@@ -5,7 +5,7 @@ const AppContext = React.createContext();
 
 const initialState = {
   submitted: false,
-  logged: false,
+  logged: localStorage.getItem("loggedUsers"),
 };
 
 const AppProvider = ({ children }) => {

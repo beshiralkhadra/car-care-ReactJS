@@ -102,16 +102,16 @@ const Booking = () => {
           <input type="date" name="start" min={minDate} />
           <input required type="time" name="hours" />
         </div>
+        <div className="total">
+          <p>Total :{voucher == false ? price : newPrice} JOD</p>
+          <button className="voucher-btn" onClick={handlingVoucher}>
+            Apply Voucher
+          </button>
+        </div>
         <div className="submit">
           <input type="submit" value="Book Now !" />
         </div>
       </form>
-      <div className="total">
-        <p>Total :{voucher == false ? price : newPrice} JOD</p>
-        <button className="voucher-btn" onClick={handlingVoucher}>
-          Apply Voucher
-        </button>
-      </div>
       {submitted && <Popup test={test} setSubmitted={setSubmitted} />}
     </div>
   );

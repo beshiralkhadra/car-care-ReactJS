@@ -25,6 +25,7 @@
   font-size: 14px;
   padding: 10px;
   width: 100%;
+  margin-bottom: 1em;
 }
 .car-care-form-container input[type="submit"] {
   border: none;
@@ -32,9 +33,13 @@
   background-color: #1e69b8;
   color: white;
   font-size: 14px;
-  padding: 5px 12px;
+  padding: 1em 3em;
   transition: 500ms;
   border-radius: 5px;
+}
+.form .submit {
+  display: flex;
+  justify-content: center;
 }
 .car-care-form-container input[type="submit"]:hover {
   background-color: white;
